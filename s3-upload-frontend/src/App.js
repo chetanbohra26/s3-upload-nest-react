@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const handleFileUpload = () => {
+		console.log('attempt file upload');
+	};
+	return (
+		<div className="d-flex flex-column vh-100">
+			<Navbar />
+			<div className="d-flex flex-column flex-fill align-items-center justify-content-center">
+				<div>
+					<input
+						type="file"
+						name="file"
+						placeholder="Select a file to upload"
+					/>
+					<button className="btn btn-dark" onClick={handleFileUpload}>
+						Upload
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
